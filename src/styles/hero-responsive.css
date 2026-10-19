@@ -1,0 +1,273 @@
+/* Smaller artwork and type, while the hero itself remains one full screen. */
+.hero-stage {
+  width: min(86%, calc((100svh - var(--header-height) - 56px) * 2.1156));
+}
+@media (max-width: 700px) {
+  .hero-stage {
+    width: min(86%, calc((100svh - var(--header-height) - 56px) / 1.918605));
+  }
+  .hero-cta p {
+    font-size: clamp(16px, 4.8cqw, 20px);
+  }
+  .hero-cta .button {
+    font-size: clamp(14px, 3.8cqw, 16px);
+    min-height: 44px;
+    padding: 10px 16px;
+    gap: 8px;
+  }
+  .hero-cta .button .icon {
+    width: 20px;
+    height: 20px;
+  }
+  .step-list h3 {
+    font-size: max(16px, 4cqw);
+  }
+  .step-list p {
+    font-size: max(14px, 3.4cqw);
+  }
+  .event-info h3 {
+    font-size: max(14px, 3.45cqw);
+  }
+  .venue {
+    font-size: max(12px, 2.8cqw);
+  }
+  .price {
+    font-size: max(14px, 3.6cqw);
+  }
+  .filters button {
+    font-size: max(12px, 3.1cqw);
+  }
+  .search-field input {
+    font-size: max(12px, 3.1cqw);
+  }
+  .city-field select {
+    font-size: max(13px, 3.3cqw);
+  }
+  .footer-column h3 {
+    font-size: max(13px, 3.6cqw);
+  }
+  .footer-column a,
+  .footer-column button {
+    font-size: max(12px, 3cqw);
+  }
+}
+
+/* Keep the approved navbar and headline sizes; give the artwork more room. */
+.hero-art img {
+  scale: 0.94;
+}
+.header-menu {
+  display: contents;
+}
+.menu-toggle {
+  display: none;
+}
+@media (max-width: 700px) {
+  .header {
+    position: relative;
+    z-index: 20;
+    justify-content: space-between;
+  }
+  .js .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+    margin-left: auto;
+    background: transparent;
+    border-radius: 50%;
+    transition:
+      transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+      color 0.18s;
+  }
+  .menu-toggle span {
+    display: block;
+    width: 23px;
+    height: 2px;
+    border-radius: 2px;
+    background: currentColor;
+    transform: translateX(-2px);
+    transition:
+      transform 0.55s cubic-bezier(0.22, 1.2, 0.36, 1),
+      opacity 0.2s ease;
+  }
+  .menu-toggle span:nth-child(2) {
+    transform: translateX(3px) scaleX(0.72);
+    transition-delay: 0.04s;
+  }
+  .menu-toggle span:nth-child(3) {
+    transition-delay: 0.06s;
+  }
+  .header-menu {
+    display: flex;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 16px;
+    padding: 8px 24px 24px;
+    background: white;
+    border-bottom: 1px solid #eae7f3;
+    box-shadow: 0 12px 20px #1e0c4a0a;
+  }
+  .js .header-menu {
+    visibility: hidden;
+    pointer-events: none;
+    clip-path: inset(0 0 100% 0);
+    transition:
+      clip-path 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+      visibility 0.45s;
+  }
+  .header-menu .navigation {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    margin: 0;
+    font-size: 16px;
+  }
+  .header-menu .navigation a {
+    display: block;
+    padding: 12px 0;
+  }
+  .header-menu .my-tickets {
+    align-self: stretch;
+    min-height: 46px;
+    font-size: 15px;
+  }
+  .header-menu .my-tickets .icon {
+    display: block;
+    width: 21px;
+    height: 23px;
+  }
+  .header-menu .navigation a,
+  .header-menu .my-tickets {
+    --menu-order: 0;
+    transition:
+      transform 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+      color 0.18s,
+      background-color 0.18s;
+  }
+  .header-menu .navigation a:nth-child(2) {
+    --menu-order: 1;
+  }
+  .header-menu .navigation a:nth-child(3) {
+    --menu-order: 2;
+  }
+  .header-menu .my-tickets {
+    --menu-order: 3;
+  }
+  .js .header-menu :is(.navigation a, .my-tickets) {
+    transform: translateY(-10px);
+  }
+  .header[data-menu-open="true"] .header-menu {
+    visibility: visible;
+    pointer-events: auto;
+    clip-path: inset(0 0 0 0);
+  }
+  .header[data-menu-open="true"] .header-menu :is(.navigation a, .my-tickets) {
+    transform: none;
+    transition-delay: calc(40ms + var(--menu-order) * 35ms);
+  }
+  .header[data-menu-open="true"] .menu-toggle {
+    transform: rotate(90deg);
+  }
+  .header[data-menu-open="true"] .menu-toggle span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .header[data-menu-open="true"] .menu-toggle span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(12px) scaleX(0);
+  }
+  .header[data-menu-open="true"] .menu-toggle span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+}
+/* Android/mobile: a compact single composition, followed by normal page flow. */
+@media (max-width: 700px) {
+  .hero {
+    min-height: 0;
+    height: auto;
+    display: block;
+    padding: 32px 0 22px;
+    overflow: clip;
+  }
+  .hero-stage {
+    width: 86%;
+    aspect-ratio: 400/420;
+    margin: 0 auto;
+  }
+  .line-three {
+    left: 20cqw;
+  }
+  .hero-star {
+    left: 73cqw;
+    top: -7cqw;
+    width: 24cqw;
+  }
+  .hero-ticket {
+    left: 74cqw;
+    top: 14cqw;
+    width: 29cqw;
+  }
+  .hero-disc {
+    left: -4cqw;
+    top: 48cqw;
+    width: 25cqw;
+  }
+  .hero-ring {
+    left: 77cqw;
+    top: 62cqw;
+    width: 23cqw;
+  }
+  .hero-orb {
+    left: 52cqw;
+    top: 65cqw;
+    width: 12cqw;
+  }
+  .hero-cta {
+    top: 90cqw;
+  }
+  .hero-curve {
+    left: 74cqw;
+    top: 27cqw;
+    width: 29cqw;
+    height: 25cqw;
+    z-index: -1;
+  }
+  .dot-peach {
+    left: 89cqw;
+    top: 4cqw;
+    width: 8cqw;
+    height: 8cqw;
+  }
+  .dot-coral {
+    left: -1cqw;
+    top: 38cqw;
+    width: 2.5cqw;
+    height: 2.5cqw;
+  }
+  .dot-blue {
+    left: -3cqw;
+    top: 42cqw;
+    width: 3.3cqw;
+    height: 3.3cqw;
+  }
+  .dot-lime {
+    left: 100cqw;
+    top: 78cqw;
+    width: 3.5cqw;
+    height: 3.5cqw;
+  }
+  .dot-small-blue {
+    left: 97cqw;
+    top: 88cqw;
+    width: 2.5cqw;
+    height: 2.5cqw;
+  }
+}

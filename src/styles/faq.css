@@ -1,0 +1,185 @@
+/* The FAQ uses the same open layout, lavender surface and gutters as discovery. */
+.faq {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.45fr);
+  align-items: start;
+  gap: clamp(40px, 5cqw, 80px);
+  margin-top: 48px;
+  padding: 48px clamp(28px, 2.5cqw, 44px);
+  border: 1px solid #e6e2fa;
+  background: #f5f4fb;
+  scroll-margin-top: 24px;
+}
+.faq-copy h2 {
+  font-family: Urbanist, Arial, sans-serif;
+  font-size: clamp(38px, 4.1cqw, 60px);
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -0.05em;
+}
+.faq-copy h2 > .faq-heading-line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.1em;
+  margin-bottom: -0.1em;
+  color: var(--ink);
+}
+.faq-copy h2 > .faq-heading-blue {
+  color: var(--blue);
+}
+.faq-heading-text {
+  display: block;
+}
+.faq-copy > p {
+  max-width: 29ch;
+  margin-top: 18px;
+  font-size: 18px;
+  line-height: 1.45;
+  color: #6c657d;
+}
+.faq-art {
+  display: block;
+  width: min(100%, 320px);
+  margin: 20px auto 0;
+}
+.faq-art img {
+  width: 100%;
+  height: auto;
+}
+.faq-list {
+  min-width: 0;
+  border-top: 1px solid #dcd7eb;
+}
+.faq-list details {
+  border-bottom: 1px solid #dcd7eb;
+}
+.faq-list summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 80px;
+  padding: 22px 0;
+  list-style: none;
+  cursor: pointer;
+  font-family: Urbanist, Arial, sans-serif;
+  font-size: clamp(20px, 1.65cqw, 25px);
+  font-weight: 750;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  transition: color 0.2s;
+}
+.faq-list summary::-webkit-details-marker {
+  display: none;
+}
+.faq-list summary::marker {
+  content: "";
+}
+.faq-list summary:hover,
+.faq-list details[open] > summary {
+  color: var(--blue);
+}
+.faq-list summary:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 5px;
+  border-radius: 4px;
+}
+.faq-toggle {
+  position: relative;
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
+}
+.faq-toggle::before,
+.faq-toggle::after {
+  content: "";
+  position: absolute;
+  left: 2px;
+  right: 2px;
+  top: 10px;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+  transition: transform 0.25s var(--motion-ease);
+}
+.faq-toggle::after {
+  transform: rotate(90deg);
+}
+.faq-list details[open] .faq-toggle::after {
+  transform: rotate(0);
+}
+.faq-answer {
+  padding: 0 42px 24px 0;
+}
+.faq-answer p {
+  max-width: 58ch;
+  font-size: 17px;
+  line-height: 1.55;
+  color: #625c72;
+}
+@media (min-width: 701px) and (max-width: 1000px) {
+  .faq {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.3fr);
+    gap: 32px;
+    padding: 32px 28px;
+  }
+  .faq-copy h2 {
+    font-size: 38px;
+  }
+  .faq-copy > p {
+    font-size: 17px;
+  }
+  .faq-list summary {
+    min-height: 76px;
+    font-size: 21px;
+    gap: 16px;
+  }
+}
+@media (max-width: 700px) {
+  .faq {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin: 28px 4cqw 0;
+    padding: 28px 20px;
+    border-radius: 20px;
+  }
+  .faq-copy {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 116px;
+    align-items: center;
+    gap: 12px;
+  }
+  .faq-copy h2 {
+    grid-column: 1/-1;
+    font-size: clamp(30px, 8.4cqw, 44px);
+  }
+  .faq-copy > p {
+    max-width: 22ch;
+    font-size: 16px;
+    line-height: 1.45;
+    margin-top: 0;
+  }
+  .faq-art {
+    width: 132px;
+    max-width: none;
+    margin: 0 0 0 -10px;
+  }
+  .faq-list summary {
+    min-height: 76px;
+    padding: 21px 0;
+    font-size: 20px;
+    gap: 16px;
+  }
+  .faq-toggle {
+    width: 20px;
+    height: 20px;
+    flex-basis: 20px;
+  }
+  .faq-answer {
+    padding: 0 24px 22px 0;
+  }
+  .faq-answer p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}

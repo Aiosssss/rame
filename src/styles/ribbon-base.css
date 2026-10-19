@@ -1,0 +1,24 @@
+.ribbon {
+  height: 4.45cqw;
+  background: linear-gradient(90deg, #d4ff64, #d8ff66);
+  overflow: hidden;
+}
+.ribbon > div {
+  height: 100%;
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 2cqw;
+  white-space: nowrap;
+}
+.ribbon span:not(.starburst) {
+  font-size: 1.55cqw;
+  font-weight: 800;
+  letter-spacing: 0.1cqw;
+}
+.starburst {
+  font-family: Arial, sans-serif;
+  font-size: 3.2cqw;
+  line-height: 1;
+}

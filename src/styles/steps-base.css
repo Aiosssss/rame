@@ -1,0 +1,69 @@
+.panel {
+  margin-left: 2.9cqw;
+  margin-right: 2.9cqw;
+  border-radius: 2.1cqw;
+  background: linear-gradient(115deg, #f1f0ff, #f4f3ff 55%, #f0f0ff);
+}
+.steps {
+  display: flex;
+  align-items: center;
+  height: 13.4cqw;
+  margin-top: 1.1cqw;
+  scroll-margin-top: 2cqw;
+  padding: 1.6cqw 2.5cqw;
+}
+.steps h2 {
+  flex: 0 0 39%;
+  font-family: Urbanist, Arial, sans-serif;
+  font-size: 3.65cqw;
+  line-height: 1.01;
+  letter-spacing: -0.1cqw;
+  font-weight: 800;
+  white-space: nowrap;
+}
+.steps h2 span {
+  color: var(--blue);
+}
+.step-list {
+  flex: 1;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  height: 7.5cqw;
+}
+.step-list li {
+  display: flex;
+  align-items: center;
+  border-left: 1px solid #c9c8f1;
+  width: 33.33%;
+  height: 100%;
+  gap: 0.5cqw;
+  padding-left: 1cqw;
+}
+.step-list img {
+  width: 6.5cqw;
+  flex-shrink: 0;
+  filter: drop-shadow(0.2cqw 0.5cqw 0.35cqw #0002);
+}
+.step-list li:nth-child(2) {
+  padding-left: 0.6cqw;
+  gap: 0.4cqw;
+}
+.step-list li:nth-child(3) {
+  padding-left: 0.8cqw;
+  gap: 0.2cqw;
+}
+.step-list h3 {
+  font-size: 1.38cqw;
+  font-weight: 700;
+  white-space: nowrap;
+  margin-bottom: 0.6cqw;
+}
+.step-list p {
+  font-size: 1.02cqw;
+  line-height: 1.15;
+  color: var(--muted);
+  max-width: 10.5cqw;
+}

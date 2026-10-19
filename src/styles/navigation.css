@@ -1,0 +1,284 @@
+/* A masked logo rise, a compact shared underline, and an arrow-led CTA. */
+:root {
+  --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+.header .brand {
+  display: block;
+}
+.header .brand-window {
+  display: block;
+  overflow: hidden;
+}
+.header .brand img {
+  animation: brand-rise 0.95s var(--motion-ease) 0.12s backwards;
+  transition: transform 0.35s var(--motion-ease);
+}
+.header .brand:active img {
+  transform: scale(0.96);
+}
+.header .brand:focus-visible img {
+  transform: translateY(-2px);
+}
+.nav-indicator {
+  display: none;
+}
+@media (min-width: 701px) {
+  .header .navigation {
+    position: relative;
+    padding: 10px 0;
+  }
+  .nav-indicator {
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 3px;
+    width: 28px;
+    height: 1.5px;
+    background: var(--blue);
+    border-radius: 2px;
+    pointer-events: none;
+    opacity: 0;
+    transition:
+      transform 0.42s var(--motion-ease),
+      opacity 0.2s;
+  }
+  .navigation[data-indicator-ready="true"] .nav-indicator {
+    opacity: 1;
+  }
+}
+.hero-cta .button {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: #050505;
+  color: white;
+  transition:
+    transform 0.5s var(--motion-ease),
+    box-shadow 0.2s;
+}
+.hero-cta .button:hover {
+  background: #050505;
+  color: white;
+}
+.hero-cta .button::before {
+  content: "";
+  position: absolute;
+  right: calc(28px - 125%);
+  top: 50%;
+  width: 250%;
+  aspect-ratio: 1;
+  z-index: 0;
+  border-radius: 50%;
+  background: var(--blue);
+  transform: translateY(-50%) scale(0);
+  transition: transform 0.65s var(--motion-ease);
+}
+.cta-label {
+  display: flex;
+  gap: 0.24em;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  line-height: 1.2;
+  transition: transform 0.5s var(--motion-ease);
+}
+.cta-label > span {
+  display: block;
+}
+.hero-cta .button .cta-arrow {
+  display: block;
+  position: relative;
+  z-index: 1;
+  width: 2.4cqw;
+  height: 2.4cqw;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.hero-cta .cta-arrow .icon {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s var(--motion-ease);
+}
+.hero-cta .cta-arrow .icon + .icon {
+  transform: translate(-130%, 130%) rotate(-35deg);
+}
+.hero.is-ready .hero-cta .button {
+  animation: cta-button-arrive 0.9s var(--motion-ease) 1.05s backwards;
+}
+.hero.is-ready .cta-label > span {
+  animation: cta-word-rise 0.7s var(--motion-ease) 1.2s backwards;
+}
+.hero.is-ready .cta-label > span + span {
+  animation-delay: 1.3s;
+}
+.hero.is-ready .cta-arrow {
+  animation: cta-arrow-arrive 0.75s var(--motion-ease) 1.35s backwards;
+}
+.hero-cta .button:focus-visible::before {
+  transform: translateY(-50%) scale(1);
+}
+.hero-cta .button:focus-visible .cta-label {
+  transform: translateX(-3px);
+}
+.hero-cta .button:focus-visible .cta-arrow .icon:first-child {
+  transform: translate(130%, -130%) rotate(-35deg);
+}
+.hero-cta .button:focus-visible .cta-arrow .icon + .icon {
+  transform: rotate(-35deg);
+}
+.ticket-label {
+  display: flex;
+  position: relative;
+  z-index: 1;
+  line-height: 1.2;
+}
+.button-char {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  vertical-align: top;
+  white-space: pre;
+  line-height: 1.2;
+}
+.button-char > span {
+  display: block;
+}
+.button-char::after {
+  content: attr(data-char);
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
+.button-char > span,
+.button-char::after {
+  transition: transform 0.55s var(--motion-ease);
+  transition-delay: calc(var(--letter) * 20ms);
+}
+.header .my-tickets {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: #050505;
+  color: white;
+}
+.header .my-tickets:hover {
+  background: #050505;
+  color: white;
+}
+.my-tickets::before {
+  content: "";
+  position: absolute;
+  left: calc(28px - 125%);
+  top: 50%;
+  width: 250%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--blue);
+  transform: translateY(-50%) scale(0);
+  transition: transform 0.65s var(--motion-ease);
+}
+.my-tickets .icon {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.5s var(--motion-ease);
+}
+.header .my-tickets:hover::before,
+.header .my-tickets:focus-visible::before,
+.header .my-tickets:active::before {
+  transform: translateY(-50%) scale(1);
+}
+:is(.hero-cta .button, .header .my-tickets):focus-visible .button-char > span,
+:is(.hero-cta .button, .header .my-tickets):focus-visible .button-char::after {
+  transform: translateY(-100%);
+}
+@media (hover: hover) and (pointer: fine) {
+  .header .brand:hover img {
+    transform: translateY(-2px);
+  }
+  .hero-cta .button:hover {
+    transform: translateY(-2px) scale(1.015);
+  }
+  .hero-cta .button:hover::before {
+    transform: translateY(-50%) scale(1);
+  }
+  .hero-cta .button:hover .cta-label {
+    transform: translateX(-3px);
+  }
+  .hero-cta .button:hover .cta-arrow .icon:first-child {
+    transform: translate(130%, -130%) rotate(-35deg);
+  }
+  .hero-cta .button:hover .cta-arrow .icon + .icon {
+    transform: rotate(-35deg);
+  }
+  .header .my-tickets:hover .icon {
+    transform: rotate(8deg) translateY(-1px);
+  }
+  :is(.hero-cta .button, .header .my-tickets):hover .button-char > span,
+  :is(.hero-cta .button, .header .my-tickets):hover .button-char::after {
+    transform: translateY(-100%);
+  }
+}
+.hero-cta .button:active {
+  transform: scale(0.97);
+}
+.hero-cta .button:active::before {
+  transform: translateY(-50%) scale(1);
+}
+@media (max-width: 700px) {
+  .hero-cta .button .cta-arrow {
+    width: 20px;
+    height: 20px;
+  }
+}
+@keyframes brand-rise {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 115%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes cta-button-arrive {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0) scale(0.94);
+  }
+  70% {
+    opacity: 1;
+    transform: translate3d(0, -1px, 0) scale(1.01);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes cta-word-rise {
+  from {
+    transform: translateY(115%);
+  }
+  to {
+    transform: none;
+  }
+}
+@keyframes cta-arrow-arrive {
+  from {
+    opacity: 0;
+    transform: translate(-8px, 8px) rotate(-35deg);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .header .brand img,
+  .hero.is-ready .hero-cta .button,
+  .hero.is-ready .cta-label > span,
+  .hero.is-ready .cta-arrow {
+    animation: none !important;
+  }
+}

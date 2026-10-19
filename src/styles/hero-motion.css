@@ -1,0 +1,359 @@
+/* CGI artwork animates through opacity and transforms on entry. */
+.hero-ring {
+  left: 71cqw;
+  top: 0.5cqw;
+  width: 17.3cqw;
+}
+.hero-star {
+  left: 54.8cqw;
+  top: -1.5cqw;
+  width: 17.5cqw;
+}
+.hero-disc {
+  left: 10.8cqw;
+  top: 20.5cqw;
+  width: 20cqw;
+}
+.dot-peach {
+  left: 83.2cqw;
+  top: 0.4cqw;
+  width: 5.6cqw;
+  height: 5.6cqw;
+  background: radial-gradient(
+    circle at 30% 20%,
+    #ffe1a1,
+    #ffb46f 55%,
+    #fa737e 90%
+  );
+  z-index: 1;
+}
+/* One entrance sequence: sliding capsules, masked type, then settling artwork. */
+.hero-line {
+  overflow: hidden;
+}
+.hero-word {
+  display: block;
+  transform-origin: 15% 100%;
+}
+.js
+  .hero:not(.is-ready)
+  :is(
+    .hero-line,
+    .hero-shape,
+    .hero-art img,
+    .hero-cta,
+    .hero-curve,
+    .hero-art .dot
+  ) {
+  opacity: 0;
+}
+.hero.is-ready :is(.hero-shape, .hero-shape-mobile) {
+  opacity: 1;
+}
+.hero.is-ready :is(.hero-shape, .hero-shape-mobile) {
+  transform-box: border-box;
+  animation: hero-blue-sweep 1.15s cubic-bezier(0.22, 1, 0.36, 1)
+    var(--sweep-delay, 0s) backwards;
+}
+.hero.is-ready .line-one {
+  animation: hero-pill-from-left 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.06s
+    backwards;
+}
+.hero.is-ready .line-two {
+  animation: hero-middle-glide 1.25s cubic-bezier(0.22, 1, 0.36, 1) 0.24s
+    backwards;
+}
+.hero.is-ready .line-three {
+  animation: hero-pill-from-right 1.45s cubic-bezier(0.22, 1, 0.36, 1) 0.42s
+    backwards;
+}
+.hero.is-ready .hero-word {
+  animation: hero-word-reveal 1.1s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+.hero.is-ready .line-one .hero-word {
+  animation-delay: 0.28s;
+}
+.hero.is-ready .line-two .hero-word {
+  animation-delay: 0.48s;
+}
+.hero.is-ready .line-three .hero-word {
+  animation-delay: 0.68s;
+}
+.hero.is-ready .hero-cta {
+  animation: hero-cta-arrive 0.95s cubic-bezier(0.16, 1, 0.3, 1) 1.02s backwards;
+}
+.hero.is-ready :is(.hero-curve, .hero-art .dot) {
+  animation: hero-accent-in 0.85s ease 0.9s backwards;
+}
+@keyframes hero-blue-sweep {
+  from {
+    opacity: 0;
+    transform: scaleX(0.04);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+@keyframes hero-pill-from-left {
+  0% {
+    opacity: 0;
+    transform: translate3d(calc(-100% - 12cqw), 0, 0) rotate(-1deg) scaleX(0.94);
+  }
+  14% {
+    opacity: 1;
+  }
+  74% {
+    transform: translate3d(1.2cqw, 0, 0) rotate(0.12deg) scaleX(1.012);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotate(0) scaleX(1);
+  }
+}
+@keyframes hero-middle-glide {
+  0% {
+    opacity: 0;
+    transform: translate3d(-10cqw, 0, 0);
+  }
+  76% {
+    opacity: 1;
+    transform: translate3d(0.6cqw, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes hero-pill-from-right {
+  0% {
+    opacity: 0;
+    transform: translate3d(calc(70% + 10cqw), 0, 0) rotate(1deg) scaleX(0.96);
+  }
+  14% {
+    opacity: 1;
+  }
+  74% {
+    transform: translate3d(-0.9cqw, 0, 0) rotate(-0.1deg) scaleX(1.01);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotate(0) scaleX(1);
+  }
+}
+@keyframes hero-word-reveal {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 115%, 0) rotate(5deg);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotate(0);
+  }
+}
+@keyframes hero-cta-arrive {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 24px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes hero-accent-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero.is-ready
+    :is(
+      .hero-line,
+      .hero-word,
+      .hero-shape,
+      .hero-art img,
+      .hero-cta,
+      .hero-curve,
+      .hero-art .dot,
+      .hero-shape rect,
+      .hero-shape-mobile rect
+    ) {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  .js
+    .hero:not(.is-ready)
+    :is(
+      .hero-line,
+      .hero-shape,
+      .hero-art img,
+      .hero-cta,
+      .hero-curve,
+      .hero-art .dot
+    ) {
+    opacity: 1;
+  }
+}
+
+.hero-shape-mobile {
+  display: none;
+}
+@media (max-width: 700px) {
+  .hero-stage {
+    width: min(100%, calc((100svh - var(--header-height) - 56px) / 1.65));
+    aspect-ratio: 400/660;
+  }
+  .hero-shape {
+    display: none;
+  }
+  .hero-shape-mobile {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 67.5cqw;
+    fill: var(--blue);
+    z-index: -1;
+  }
+  .hero h1 {
+    font-size: 19.5cqw;
+    letter-spacing: -0.7cqw;
+  }
+  .hero-line {
+    height: 20cqw;
+  }
+  .line-one {
+    left: 5cqw;
+    top: 5cqw;
+    width: 68cqw;
+    padding-bottom: 1cqw;
+    border-width: 0.4cqw;
+  }
+  .line-two {
+    left: 8cqw;
+    top: 25cqw;
+    padding-bottom: 0.6cqw;
+  }
+  .line-three {
+    left: 12cqw;
+    top: 46cqw;
+    width: 84cqw;
+    height: 18cqw;
+    font-size: 16.2cqw;
+    letter-spacing: -0.65cqw;
+    padding-bottom: 0.9cqw;
+    border-width: 0.4cqw;
+  }
+  .hero-star {
+    left: 49cqw;
+    top: 68cqw;
+    width: 36cqw;
+  }
+  .hero-ring {
+    left: 63cqw;
+    top: 96cqw;
+    width: 34cqw;
+  }
+  .hero-ticket {
+    left: 28cqw;
+    top: 104cqw;
+    width: 57cqw;
+  }
+  .hero-disc {
+    left: 2cqw;
+    top: 71cqw;
+    width: 39cqw;
+  }
+  .hero-orb {
+    left: 9cqw;
+    top: 124cqw;
+    width: 17cqw;
+  }
+  .hero-cta {
+    left: 7cqw;
+    top: 145cqw;
+    width: 86cqw;
+  }
+  .hero-cta p {
+    font-size: 4.8cqw;
+    line-height: 1.08;
+  }
+  .hero-cta .button {
+    font-size: 3.8cqw;
+    min-height: 11cqw;
+    padding: 2cqw 5cqw;
+    gap: 2cqw;
+  }
+  .hero-cta .button .icon {
+    width: 5cqw;
+    height: 5cqw;
+  }
+  .hero-curve {
+    left: 57cqw;
+    top: 80cqw;
+    width: 40cqw;
+    height: 20cqw;
+  }
+  .dot-peach {
+    left: 81cqw;
+    top: 95cqw;
+    width: 9cqw;
+    height: 9cqw;
+  }
+  .dot-coral {
+    left: 6cqw;
+    top: 65cqw;
+    width: 2.5cqw;
+    height: 2.5cqw;
+  }
+  .dot-blue {
+    left: 3cqw;
+    top: 69cqw;
+    width: 3.3cqw;
+    height: 3.3cqw;
+  }
+  .dot-lime {
+    left: 87cqw;
+    top: 131cqw;
+    width: 5cqw;
+    height: 5cqw;
+  }
+  .dot-small-blue {
+    left: 88cqw;
+    top: 121cqw;
+    width: 3.6cqw;
+    height: 3.6cqw;
+  }
+  .js .hero:not(.is-ready) .hero-shape-mobile {
+    opacity: 0;
+  }
+  .hero.is-ready .hero-shape-mobile {
+    opacity: 1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero.is-ready .hero-shape-mobile {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  .js .hero:not(.is-ready) .hero-shape-mobile {
+    opacity: 1;
+  }
+}
+
+/* Text starts with the first CSS paint; CGI waits for its own decoded assets. */
+.js .hero[data-art-ready="false"] .hero-art img {
+  opacity: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  .js .hero[data-art-ready="false"] .hero-art img {
+    opacity: 1;
+  }
+}

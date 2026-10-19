@@ -1,0 +1,93 @@
+/* Short entrances run only when a heading or current-list card becomes visible. */
+.events .event-toolbar h2 > .event-heading-line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.09em;
+  margin-bottom: -0.09em;
+  color: var(--ink);
+}
+.events .event-toolbar h2 > .event-heading-blue {
+  color: var(--blue);
+}
+.event-heading-text {
+  display: inline-block;
+}
+#events-title[data-reveal="ready"] .event-heading-text {
+  transform: translate3d(0, 110%, 0);
+}
+#events-title[data-reveal="playing"] .event-heading-text {
+  animation: event-title-in 0.6s var(--motion-ease) both;
+}
+#events-title[data-reveal="playing"] .event-heading-blue .event-heading-text {
+  animation-delay: 75ms;
+}
+.events .event-card[data-reveal="ready"] {
+  opacity: 0;
+  transform: translate3d(0, 14px, 0);
+}
+.events .event-card[data-reveal="playing"] {
+  animation: event-card-in 0.48s var(--motion-ease) var(--event-delay, 0ms) both;
+}
+.events .price[data-reveal="ready"] {
+  opacity: 0;
+  transform: translate3d(-28px, 0, 0);
+}
+.events .price[data-reveal="playing"] {
+  animation: event-price-in 0.7s cubic-bezier(0.22, 0.61, 0.36, 1)
+    calc(var(--event-delay, 0ms) + 90ms) both;
+}
+@keyframes event-title-in {
+  from {
+    transform: translate3d(0, 110%, 0);
+  }
+  to {
+    transform: none;
+  }
+}
+@keyframes event-card-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes event-price-in {
+  from {
+    opacity: 0;
+    transform: translate3d(-28px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* A single blue pill follows category hover/focus without changing the filter. */
+.events .filters {
+  position: relative;
+  isolation: isolate;
+}
+.filter-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: 99px;
+  background: var(--blue);
+  transform-origin: left center;
+}
+.events .filters[data-indicator-ready="true"] button {
+  background: transparent;
+  border-color: transparent;
+  transition: color 0.16s;
+}
+.events .filters[data-indicator-ready="true"] button.selected {
+  color: #6a647c;
+}
+.events .filters[data-indicator-ready="true"] button.indicator-target {
+  color: white;
+}

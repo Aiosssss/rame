@@ -1,0 +1,165 @@
+.hero {
+  position: relative;
+  height: 40.6cqw;
+  isolation: isolate;
+}
+.hero-shape {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  fill: var(--blue);
+  z-index: -1;
+}
+.hero h1 {
+  font-family: Urbanist, Arial, sans-serif;
+  font-weight: 850;
+  font-size: 10.65cqw;
+  letter-spacing: -0.35cqw;
+  line-height: 1;
+}
+.hero-line {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  height: 11.35cqw;
+  white-space: nowrap;
+}
+.line-one {
+  left: 11.45cqw;
+  top: 1.54cqw;
+  width: 36.4cqw;
+  justify-content: center;
+  background: white;
+  border: 0.2cqw solid var(--blue);
+  border-radius: 99px;
+  padding-bottom: 0.6cqw;
+}
+.line-two {
+  left: 15.6cqw;
+  top: 12.5cqw;
+  color: white;
+  padding-bottom: 0.3cqw;
+}
+.line-three {
+  left: 29.8cqw;
+  top: 23.6cqw;
+  width: 49.4cqw;
+  background: white;
+  border: 0.2cqw solid var(--blue);
+  border-radius: 99px;
+  justify-content: center;
+  padding-bottom: 0.55cqw;
+  font-size: 9.55cqw;
+  letter-spacing: -0.45cqw;
+}
+.hero-art {
+  pointer-events: none;
+}
+.hero-art img {
+  position: absolute;
+}
+.hero-star {
+  left: 54.8cqw;
+  top: -1.2cqw;
+  width: 16.8cqw;
+  z-index: 3;
+  filter: drop-shadow(0.7cqw 1.1cqw 0.9cqw #0002);
+}
+.hero-ring {
+  left: 71cqw;
+  top: 1.1cqw;
+  width: 18.55cqw;
+  z-index: 2;
+  filter: drop-shadow(0.4cqw 0.7cqw 0.6cqw #37216924);
+}
+.hero-ticket {
+  left: 52.8cqw;
+  top: 10.3cqw;
+  width: 26.6cqw;
+  z-index: 4;
+  filter: drop-shadow(0.9cqw 1.2cqw 0.8cqw #0003);
+}
+.hero-disc {
+  left: 10.5cqw;
+  top: 21.8cqw;
+  width: 22.3cqw;
+  z-index: 4;
+  filter: drop-shadow(0.4cqw 1.2cqw 0.9cqw #0002);
+}
+.hero-orb {
+  left: 53.8cqw;
+  top: 32.4cqw;
+  width: 8.9cqw;
+  z-index: 4;
+  filter: drop-shadow(0.4cqw 0.6cqw 0.5cqw #0001);
+}
+.hero-curve {
+  position: absolute;
+  left: 74.7cqw;
+  top: 10.2cqw;
+  width: 17cqw;
+  height: 8.4cqw;
+  fill: none;
+  stroke: var(--blue);
+  stroke-width: 1.5;
+  stroke-dasharray: 1.3 2;
+}
+.dot {
+  position: absolute;
+  border-radius: 50%;
+}
+.dot-coral {
+  left: 7.6cqw;
+  top: 22.1cqw;
+  width: 1.85cqw;
+  height: 1.85cqw;
+  background: radial-gradient(circle at 30% 25%, #ffb567, #ff514b 70%);
+}
+.dot-blue {
+  left: 9.65cqw;
+  top: 23.9cqw;
+  width: 2.05cqw;
+  height: 2.05cqw;
+  background: radial-gradient(circle at 30% 25%, #6c72ff, #2814ff 70%);
+}
+.dot-lime {
+  left: 85.6cqw;
+  top: 16.2cqw;
+  width: 3cqw;
+  height: 3cqw;
+  background: radial-gradient(circle at 30% 25%, #dcff58, #b7f145 75%);
+}
+.dot-small-blue {
+  left: 82.2cqw;
+  top: 18.5cqw;
+  width: 2.1cqw;
+  height: 2.1cqw;
+  background: radial-gradient(circle at 30% 25%, #7c7dff, #2714ff 70%);
+}
+.dot-purple {
+  left: 83cqw;
+  top: 37cqw;
+  width: 1.65cqw;
+  height: 1.65cqw;
+  background: radial-gradient(circle at 35% 30%, #b191ff, #743dff 70%);
+}
+.hero-cta {
+  position: absolute;
+  left: 80cqw;
+  top: 24.1cqw;
+  width: 15cqw;
+}
+.hero-cta p {
+  font-size: 2.15cqw;
+  font-weight: 700;
+  line-height: 1.04;
+  margin-bottom: 1.3cqw;
+}
+.hero-cta .button {
+  width: 100%;
+  min-height: 5cqw;
+  padding: 0.8cqw 1.7cqw;
+  font-size: 1.65cqw;
+  gap: 0.9cqw;
+}

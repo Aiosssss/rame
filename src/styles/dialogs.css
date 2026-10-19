@@ -1,0 +1,103 @@
+/* Secondary views only appear after a visitor activates an existing control. */
+dialog {
+  border: 0;
+  border-radius: 24px;
+  padding: 36px;
+  width: min(92vw, 560px);
+  max-height: 90vh;
+  overflow: auto;
+  color: var(--ink);
+  font-family: Roboto, Arial, sans-serif;
+  box-shadow: 0 24px 100px #0003;
+}
+dialog::backdrop {
+  background: #17152b80;
+  backdrop-filter: blur(4px);
+}
+.dialog-close {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-family: Arial, sans-serif;
+  font-size: 30px;
+  background: transparent;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  z-index: 1;
+}
+.dialog-close:hover {
+  background: #f1f0ff;
+}
+dialog h2 {
+  font-family: Urbanist, Arial, sans-serif;
+  font-size: 34px;
+  line-height: 1.05;
+  letter-spacing: -1px;
+  margin: 10px 0 20px;
+}
+dialog p {
+  font-size: 17px;
+  line-height: 1.5;
+  margin: 10px 0;
+  color: #60647b;
+}
+dialog .dialog-photo {
+  width: 100%;
+  aspect-ratio: 1.75;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 22px;
+}
+dialog .dialog-meta {
+  display: flex;
+  gap: 24px;
+  margin: 16px 0;
+  font-size: 16px;
+}
+dialog .dialog-price {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--ink);
+}
+dialog .dialog-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--ink);
+  color: white;
+  border-radius: 99px;
+  font-size: 17px;
+  padding: 13px 22px;
+  margin-top: 16px;
+}
+dialog .dialog-button:hover {
+  background: var(--blue);
+}
+dialog label {
+  display: block;
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: 600;
+}
+dialog input,
+dialog textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #d9d8e2;
+  border-radius: 12px;
+  margin-top: 7px;
+  font: inherit;
+  background: #fafaff;
+}
+dialog textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+dialog .form-note {
+  font-size: 14px;
+}
+dialog .saved-draft {
+  color: var(--blue);
+  font-weight: 600;
+}

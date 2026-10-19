@@ -1,0 +1,66 @@
+.event-pagination {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 28px;
+}
+.event-pagination[hidden] {
+  display: none;
+}
+.event-pagination button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 48px;
+  padding: 12px 22px;
+  border: 1px solid #ded9ed;
+  border-radius: 99px;
+  background: white;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--blue);
+}
+.event-pagination button:last-child {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: white;
+}
+.event-pagination button:disabled {
+  background: #eeecf5;
+  border-color: #e6e2ef;
+  color: #9991a8;
+  cursor: default;
+}
+.event-pagination .icon {
+  width: 20px;
+  height: 20px;
+}
+#events-previous .icon {
+  transform: rotate(180deg);
+}
+@media (hover: hover) and (pointer: fine) {
+  .events .event-card:hover {
+    transform: translate3d(0, -4px, 0);
+  }
+  .events .event-card:hover::before {
+    opacity: 1;
+    transform: none;
+  }
+  .events .event-card:hover .price::before {
+    transform: translateY(-50%) scale(1);
+  }
+  .events .event-card:hover .event-card-arrow {
+    transform: translateX(4px);
+  }
+  .event-card-link:hover h3 {
+    color: var(--blue);
+  }
+  .event-pagination button:not(:disabled):hover {
+    border-color: var(--blue);
+    background: #ece8ff;
+  }
+  .event-pagination button:last-child:not(:disabled):hover {
+    background: #2409da;
+  }
+}

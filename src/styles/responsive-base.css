@@ -1,0 +1,355 @@
+@media (min-width: 1441px) {
+  body {
+    background: #f8f8fc;
+  }
+  .page {
+    background: #fff;
+  }
+}
+@media (max-width: 700px) {
+  .page {
+    overflow: clip;
+  }
+  .header {
+    height: 80px;
+    padding: 0 22px;
+    gap: 18px;
+  }
+  .brand img {
+    width: 106px;
+  }
+  .navigation {
+    gap: 16px;
+    font-size: 12px;
+  }
+  .navigation a:nth-child(3) {
+    display: none;
+  }
+  .my-tickets {
+    min-height: 36px;
+    font-size: 12px;
+    padding: 9px 13px;
+    gap: 6px;
+  }
+  .my-tickets .icon {
+    width: 18px;
+    height: 20px;
+  }
+  .header .navigation {
+    margin-left: auto;
+  }
+  .hero {
+    height: 55cqw;
+    margin-top: 3cqw;
+  }
+  .hero-shape {
+    height: 40.6cqw;
+  }
+  .hero h1 {
+    font-size: 10.35cqw;
+  }
+  .hero-cta {
+    top: 40.6cqw;
+    left: 11.5cqw;
+    width: 77cqw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .hero-cta p {
+    font-size: 4cqw;
+    line-height: 1.05;
+    margin: 0;
+  }
+  .hero-cta .button {
+    width: auto;
+    min-height: 9cqw;
+    padding: 1.6cqw 4cqw;
+    font-size: 3cqw;
+    gap: 2cqw;
+  }
+  .button .icon {
+    width: 5cqw;
+    height: 5cqw;
+  }
+  .ribbon {
+    height: 8cqw;
+  }
+  .ribbon > div {
+    width: 180%;
+    gap: 4cqw;
+  }
+  .ribbon span:not(.starburst) {
+    font-size: 2.6cqw;
+    letter-spacing: 0.2cqw;
+  }
+  .starburst {
+    font-size: 5cqw;
+  }
+  .hero .dot-purple {
+    display: none;
+  }
+  .panel {
+    margin-left: 4cqw;
+    margin-right: 4cqw;
+    border-radius: 4cqw;
+  }
+  .steps {
+    height: auto;
+    margin-top: 3cqw;
+    padding: 5cqw;
+    display: block;
+  }
+  .steps h2 {
+    font-size: 6.8cqw;
+    line-height: 1.02;
+    letter-spacing: -0.3cqw;
+    white-space: normal;
+  }
+  .step-list {
+    margin-top: 5cqw;
+    height: auto;
+    display: block;
+  }
+  .step-list li,
+  .step-list li:nth-child(2),
+  .step-list li:nth-child(3) {
+    width: 100%;
+    border-left: 0;
+    border-top: 1px solid #d5d1ed;
+    padding: 3cqw 0;
+    gap: 4cqw;
+    height: auto;
+  }
+  .step-list img {
+    width: 15cqw;
+  }
+  .step-list h3 {
+    font-size: 4cqw;
+    margin-bottom: 1cqw;
+  }
+  .step-list p {
+    font-size: 3.4cqw;
+    line-height: 1.3;
+    max-width: 54cqw;
+  }
+  .events {
+    padding: 6cqw 4cqw 3cqw;
+  }
+  .event-toolbar {
+    display: block;
+    padding: 0 1cqw;
+    min-height: 0;
+    margin-bottom: 4cqw;
+  }
+  .event-toolbar h2 {
+    font-size: 9.8cqw;
+    letter-spacing: -0.5cqw;
+    line-height: 0.98;
+  }
+  .event-controls {
+    width: 100%;
+    padding-top: 5cqw;
+  }
+  .search-field,
+  .city-field {
+    height: 11cqw;
+  }
+  .search-row {
+    gap: 2cqw;
+  }
+  .search-field {
+    padding: 0 3cqw;
+    gap: 2cqw;
+  }
+  .search-field .icon {
+    width: 4cqw;
+    height: 4cqw;
+  }
+  .search-field input {
+    font-size: 3.1cqw;
+  }
+  .city-field {
+    width: 29cqw;
+    padding: 0 2.5cqw;
+    gap: 1cqw;
+  }
+  .city-field > .icon {
+    width: 3.7cqw;
+    height: 3.7cqw;
+  }
+  .city-field .chevron {
+    right: 2.2cqw;
+    width: 3.2cqw;
+    height: 3.2cqw;
+  }
+  .city-field select {
+    font-size: 3.3cqw;
+    padding-right: 3cqw;
+  }
+  .filters {
+    margin-top: 3cqw;
+    gap: 1.2cqw;
+  }
+  .filters button {
+    font-size: 3.1cqw;
+    min-height: 9cqw;
+    padding: 1cqw 2cqw;
+  }
+  .event-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3cqw 2.5cqw;
+  }
+  .event-card {
+    height: auto;
+    min-height: 48cqw;
+    border-radius: 3.5cqw;
+    padding: 0.6cqw 0.6cqw 2cqw;
+  }
+  .event-photo {
+    height: 25.5cqw;
+    border-radius: 3cqw;
+  }
+  .event-photo time {
+    left: 2cqw;
+    top: 2cqw;
+    width: 7cqw;
+    min-height: 8cqw;
+    border-radius: 1.6cqw;
+  }
+  .event-photo time strong {
+    font-size: 3.5cqw;
+  }
+  .event-photo time span {
+    font-size: 2.4cqw;
+  }
+  .event-info {
+    padding: 1.5cqw 1.5cqw;
+  }
+  .event-info h3 {
+    font-size: 3.65cqw;
+    letter-spacing: -0.1cqw;
+  }
+  .venue {
+    font-size: 2.8cqw;
+    margin-top: 1.2cqw;
+    gap: 0.6cqw;
+    line-height: 1.2;
+    white-space: normal;
+    min-height: 6.6cqw;
+    padding-right: 5cqw;
+  }
+  .venue .icon {
+    width: 3cqw;
+    height: 3cqw;
+    align-self: flex-start;
+    margin-top: 0.2cqw;
+  }
+  .price {
+    font-size: 3.6cqw;
+    line-height: 1.1;
+    margin-top: 0.5cqw;
+  }
+  .event-arrow {
+    right: 1.8cqw;
+    bottom: 1.5cqw;
+    width: 7cqw;
+    height: 7cqw;
+  }
+  .event-arrow .icon {
+    width: 4.5cqw;
+    height: 4.5cqw;
+  }
+  .empty-results {
+    font-size: 4cqw;
+    padding: 8cqw 1cqw;
+  }
+  .footer {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    padding: 6cqw 6cqw 5cqw;
+    gap: 6cqw 4cqw;
+  }
+  .footer-brand {
+    grid-column: 1/-1;
+  }
+  .footer .brand img {
+    width: 24cqw;
+  }
+  .footer-brand p {
+    font-size: 3.3cqw;
+    margin-top: 1cqw;
+  }
+  .footer-column {
+    gap: 1.5cqw;
+    padding: 0;
+  }
+  .footer-column h3 {
+    font-size: 3.6cqw;
+    margin-bottom: 1cqw;
+  }
+  .footer-column a,
+  .footer-column button {
+    font-size: 3cqw;
+    white-space: normal;
+  }
+  .footer-social {
+    grid-column: 1/-1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1cqw;
+    gap: 4cqw;
+  }
+  .social-links {
+    gap: 3cqw;
+    justify-content: flex-start;
+  }
+  .social-links .icon {
+    width: 5cqw;
+    height: 5cqw;
+  }
+  .footer-social > p {
+    font-size: 2.4cqw;
+    white-space: normal;
+    text-align: right;
+    margin: 0;
+    max-width: 43cqw;
+  }
+}
+@media (max-width: 420px) {
+  .header {
+    gap: 12px;
+    padding: 0 16px;
+  }
+  .brand img {
+    width: 90px;
+  }
+  .navigation {
+    gap: 12px;
+    font-size: 11px;
+  }
+  .my-tickets {
+    font-size: 11px;
+    padding: 8px 10px;
+  }
+  .my-tickets .icon {
+    display: none;
+  }
+  .event-info h3 {
+    font-size: 3.45cqw;
+  }
+  dialog {
+    padding: 28px 24px;
+  }
+  dialog h2 {
+    font-size: 29px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    scroll-behavior: auto;
+  }
+  * {
+    transition: none !important;
+  }
+}

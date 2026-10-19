@@ -1,0 +1,106 @@
+/* The hero fills the viewport; its composition scales as one independent stage. */
+:root {
+  --header-height: 80px;
+}
+body {
+  background: #fff;
+}
+.page {
+  max-width: none;
+  margin: 0;
+  background: #fff;
+}
+.header {
+  height: var(--header-height);
+  padding: 0 clamp(24px, 6vw, 120px);
+  gap: clamp(24px, 6vw, 100px);
+}
+.header .brand img {
+  width: clamp(108px, 9vw, 160px);
+}
+.navigation {
+  font-size: clamp(14px, 1.1vw, 18px);
+  gap: clamp(24px, 3.4vw, 60px);
+}
+.my-tickets {
+  font-size: clamp(14px, 1.05vw, 17px);
+  min-height: 44px;
+  padding: 10px 24px;
+  gap: 10px;
+}
+.my-tickets .icon {
+  width: 23px;
+  height: 25px;
+}
+.hero {
+  height: auto;
+  min-height: calc(100svh - var(--header-height));
+  display: grid;
+  place-items: center;
+  padding: 24px 0 32px;
+  margin: 0;
+  isolation: isolate;
+}
+.hero-stage {
+  position: relative;
+  isolation: isolate;
+  contain: layout style;
+  container-type: inline-size;
+  width: min(100%, calc((100svh - var(--header-height) - 56px) * 2.46));
+  aspect-ratio: 899/365;
+}
+.hero-shape {
+  height: 100%;
+}
+@media (max-width: 700px) {
+  .header {
+    padding: 0 20px;
+    gap: 16px;
+  }
+  .header .brand img {
+    width: 100px;
+  }
+  .navigation {
+    font-size: 12px;
+    gap: 14px;
+  }
+  .my-tickets {
+    font-size: 12px;
+    min-height: 38px;
+    padding: 9px 13px;
+  }
+  .my-tickets .icon {
+    width: 19px;
+    height: 20px;
+  }
+  .hero-stage {
+    width: 100%;
+    aspect-ratio: 899/500;
+  }
+  .hero-shape {
+    height: 40.6cqw;
+  }
+}
+@media (max-width: 420px) {
+  .header {
+    padding: 0 16px;
+    gap: 12px;
+  }
+  .header .brand img {
+    width: 90px;
+  }
+  .navigation {
+    font-size: 11px;
+    gap: 12px;
+  }
+  .my-tickets {
+    font-size: 11px;
+    padding: 8px 10px;
+  }
+}
+
+/* Fence SVG internals without clipping the surrounding CGI artwork. */
+.hero-shape,
+.hero-shape-mobile {
+  contain: layout style paint;
+}

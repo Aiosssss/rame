@@ -1,0 +1,81 @@
+.footer {
+  display: grid;
+  grid-template-columns: 24% 15.5% 16.2% 17.5% 1fr;
+  gap: 1.9cqw;
+  padding: 1.7cqw 5.7cqw 1.8cqw;
+  align-items: start;
+}
+.footer .brand img {
+  width: 11.3cqw;
+  margin-left: -0.2cqw;
+}
+.footer-brand p {
+  font-size: 1.35cqw;
+  line-height: 1.25;
+  color: var(--muted);
+  margin-top: 0.5cqw;
+}
+.footer-column {
+  padding-top: 0.6cqw;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 0.25cqw;
+}
+.footer-column h3 {
+  font-size: 1.35cqw;
+  font-weight: 700;
+  margin-bottom: 0.2cqw;
+}
+.footer-column a,
+.footer-column button {
+  padding: 0;
+  background: transparent;
+  border: 0;
+  font-size: 1.3cqw;
+  line-height: 1.2;
+  color: var(--muted);
+  white-space: nowrap;
+  text-align: left;
+}
+.footer-column a:hover,
+.footer-column button:hover {
+  color: var(--blue);
+}
+.footer-social {
+  padding-top: 0.6cqw;
+}
+.social-links {
+  display: flex;
+  gap: 1.7cqw;
+  justify-content: flex-end;
+}
+.social-links button {
+  display: grid;
+  place-items: center;
+  background: transparent;
+  padding: 0;
+}
+.social-links .icon {
+  width: 2.35cqw;
+  height: 2.35cqw;
+  stroke-width: 1.7;
+}
+.footer-social > p {
+  font-size: 0.9cqw;
+  color: #949bb9;
+  white-space: nowrap;
+  margin-top: 3.6cqw;
+  text-align: right;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

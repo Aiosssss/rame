@@ -1,0 +1,40 @@
+/* Reveal the strip once; its own track keeps the independent seamless loop. */
+.ribbon-shell {
+  overflow: hidden;
+}
+.js .ribbon:not([data-entrance="done"]) {
+  clip-path: inset(0 100% 0 0);
+  transform: translate3d(0, 12px, 0);
+}
+.ribbon[data-entrance="playing"] {
+  animation: ribbon-arrive 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both;
+}
+.js .ribbon:not([data-entrance="done"]) > .ribbon-track {
+  animation-play-state: paused;
+}
+@keyframes ribbon-arrive {
+  from {
+    clip-path: inset(0 100% 0 0);
+    transform: translate3d(0, 12px, 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+    transform: none;
+  }
+}
+@media (max-width: 700px) {
+  .ribbon[data-entrance="playing"] {
+    animation-delay: 0.65s;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .js .ribbon {
+    animation: none;
+    clip-path: none;
+    transform: none;
+  }
+  .faq-toggle::before,
+  .faq-toggle::after {
+    transition: none;
+  }
+}
